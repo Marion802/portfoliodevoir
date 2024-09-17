@@ -1,80 +1,89 @@
+
 <template>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">
+    
+   
+   
+   
+  <premierepartie></premierepartie>
+   
+   
+   
+  <div id="font" class="handjet">
+    <div id="cv">
+      <h2>CV en html</h2>
+      <button @click="showModal=true"><img src="./assets/hautcv.png" alt="aperçu d'un cv" class="hautcvv"></button>
+      <Modal v-if="showModal" @close="showModal=false" class="modal">
+        <h3>Création de CV en HTML</h3>
+            <h4>Crée le <time datetime="2024-07-06"> 06 Juillet 2024</time></h4>
+            <a target="blank" href="./assets/hautcv.png"><img src="./assets/hautcv.png" alt="photo cv" class="photocv"></a>
+            <img src="./assets/middlecv.png" alt="photo cv" class="photocv">
+            <img src="./assets/bascv.png" alt="photo cv" class="photocv">
+              <p>Cette création fût la première, c'est un curriculum vitae qui decrit mon parcours.
+              Il a été réalisé sur l'éditeur de texte Vscode et j'ai utilisée le HTML5 et le CSS3.
+              La maîtrise des balises spécifiques étaient requises ainsi que la stylisation par flexbox.
+              Vous pouvez retrouvez ce travail dans son intégralité <a target="blank" href="https://github.com/Marion802/devoircv.git">ICI</a>
+              </p>
+      </Modal>
+    </div>
 
-<body>
-      <header id="premierepartie" >
-        <div class="titre">
-        <h1 class="kanit-semibold"> Marion SERMANDE </h1>
+    <div id="cahierdescharges" class="handjet">
+          <h2>Cahier des charges</h2>
+            <p>Il s’agit d’un document que l’on utilise 
+              dans le cadre du développement d’un projet. Sa rédaction suit en général des normes assez fixes.
+              Il sert à définir la finalité d’un projet, les étapes pour sa réalisation et les éléments 
+              nécessaires pour le mener à bien. On peut aussi le considéré comme les termes 
+              d'un contrat entre l'entreprise et le client.</p>
+            <button @click="showCdc=true"><img src="./assets/couverturecdc.png" alt="photo couverture" class="photocdc"></button>
+            <Cdc v-if="showCdc" @close="showCdc=false" class="modal">
+              <h3>Création d'un cahier des charges</h3>
+              <p>Créer le <time datetime="2024-07-20">20 Juillet 2024</time></p>
+              <img src="./assets/lasock.png" alt="photo document" class="photosock">
+              <img src="./assets/lasocke.png" alt="photo document" class="photosock">
+              <img src="./assets/lasocket.png" alt="photo document" class="photosock">
+              <p>Ici nous retrouvons un cahier des charges qui a été réalisé par nos soin pour l'entreprise
+                La Socketterie qui souhaité revoir son site web qui était jusque là un site vitrine pour 
+                en faire un site e-commerce. Si vous quittez ces aperçut et allez voir de plus près mon travail
+                vous découvrirez la structure d'un projet de A à Z avec tout les composants de ce dernier.
+                Une présentation globale de l'entreprise et des objectifs visés. Au niveau de l'ergonomie une 
+                charte graphique pour le respect des couleurs ainsi qu'une représentation de l'architecture du site.
+                Le cahier des charges contient les spécificités des demandes du clients avec des exemples concrets.
+                Pour finir, un devis et un agenda de planning a respecter.</p>
+                <p><a target="blank"  href="./assets/lasocketterie_240912_021209(1).pdf">Mon cahier des charges</a></p>
+            </Cdc>
+    </div>
+    
         
-          <a href="#"><img src="/src/assets/logo.cocoweb.png" alt="logo-entreprise-cocoweb" id="cocoweb"></a>
-        </div>
-        <div class="nav">
-          <img src="/src/assets/souris.png" alt="une souris d'ordinateur rose" id="souris">
-          <nav class="kanit-semibold" id="navi">
-          <ul>
-            <li> <a href="#present">Présentation</a></li>
-            <li> <a href="#crea">Création</a></li>
-            <li> <a href="#formulaire">Formutaire de contact</a></li>
-          </ul>
-        </nav>
-        </div>
-      </header>
-      <main>
-      
-        <div id="present" class="handjet">
-        <p>
-          Je me présente Marion SERMANDE, heureuse fondatrice de COCO WEB. <br/>
-          Specialiste du developpeur web, COCO WEB à été créer pour donner une image et de la visibilité a vos idées. <br/>
-          Je vous laisse jeter un coup d'oeil sur les compétences acquises de COCO. 
-        </p>
-      </div>
-
-      <Modale v-bind:revele v-bind:toogleModal></Modale>
-
-      <button v-on:click="toogleModal" class="modal-btn btn btn-sucess">Ouvrir</button>
-
-      <form action="#" method="post" id="formulaire">
-        <h2>Contactez Coco</h2>
-        <div>
-          <label for="first-name">Prénom</label>
-          <input type="text" name="first-name" id="first-name" value="first-name">
-        </div>
-        
-        <div>
-          <label for="last-name" >Nom</label>
-            <input type="text" name="last-name" id="last-name">
-        </div>
-        
-        <div>
-          <label for="object" >Objet</label>
-            <input type="text" name="object" id="object">
-        </div>
-        
-        <div>
-          <label for="message" >Commentaire</label>
-          <textarea id="message" name="message" rows="4"  ></textarea>
-        
-        </div>
-        <button type="submit"> Envoyer </button>
-      </form>
-    </main>
-</body>
-
-  <footer id="pied" class="roseclair">
-
-      <a target="_blank" href="https://github.com/Marion802"><img src="/src/assets/logo-github.png" alt="logo-github"></a>
-      <a target="_blank" href="https://www.linkedin.com/in/marion-sermande-1a3208307/"><img src="/src/assets/linkedin.png" alt="logo-linkedin"></a>
-      <a target="_blank" href="https://x.com/MarionSermande"><img src="/src/assets/twitter.png" alt="logo-twitter"></a>
-      <p><small>Mise à jour le <time datetime="2024-18-09"> 18 septembre 2024</time></small></p>
 
 
-    </footer>
+        <div id="espacecomment" class="handjet">
+          <h3>Dynamiser un espace commentaire</h3>
+            <p>Ceci est un exemple de ce que nous pouvons realiser avec JavaScript</p>
+              <button @click="showComment=true"><img src="./assets/commentenvoit.png" alt="photo document" class="commentaire"></button>
+              <Comment v-if="showComment" @close="showComment=false" class="modal">
+                <h3>Dynamiser un espace commentaire</h3>
+                  <p>Créer le <time datetime="2024-08-27">27 Aout 2024</time></p>
+                  <img src="./assets/comment.png" alt="photo document" class="escom">
+                  <img src="./assets/commentenvoit.png" alt="photo document" class="escom">
+                  <p>JavaScript est un language de programmation avec lequel 
+                    nous pouvons réalisé de grand projet. Ces photos représente 
+                    un exemple d'espace commentaire ou nous avons pu realisé des messages d'erreurs
+                    si un champs est manquant ainsi que l'envoie du commentaire dans la liste présente.
+                    Vous pouvez découvrir ce travail <a target="blank"   href="https://github.com/Marion802/devoircommentaire.git">ICI</a>
+                  </p>
+              </Comment>
+          </div>
+  </div>
+
+
+
+  <formulaire></formulaire>
+
+
+  <pied></pied>
 
 
 
@@ -83,101 +92,64 @@
 
 
 
-<script setup>
-import Modale from './components/HelloWorld.vue' ;
+<script setup >
+import { ref , defineProps} from 'vue';
+import Modal from '@/components/HelloWorld.vue'
+let showModal = ref(false)
+defineComponent({Modal})
 
-let revele = false;
+import Cdc from '@/components/cdc.vue'
+let showCdc =ref(false)
+defineComponent({Cdc})
+
+import Comment from '@/components/comment.vue'
+let showComment = ref(false)
+defineComponent({Comment})
+
+import premierepartie from '@/components/corps.vue'
+
+import pied from '@/components/footer.vue';
+
+import formulaire from '@/components/form.vue';
+import { defineComponent } from 'vue';
+
+let font = 'mon-ancrage'
 
 
-
-let toogleModal = function toogleModal () {
-  this.revele = !this.revele
-}
 
 </script>
 
 
-
-
-
 <style scoped>
 
-#premierepartie {
-  background-color: #ffa9f9;
-}
+  #espacecomment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.kanit-semibold {
-  font-family: "Kanit", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 5em;
-  color: blueviolet
-}
+  #cahierdescharges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  #cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.titre {
-  display: flex;
-  height: 350px;
-  width: 100%;
-  justify-content:baseline;
-}
+  #font {
+    margin: 0px;
+    padding: 0px;
+    background-color: #ffa9f9;
+    font-size: 1.5em;
+  }
 
-h1 {
-  width: 85%;
-}
-
-#navi {
-  font-size: 2em;
-  text-decoration: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-#navi :visited {
-  color: blue;
-  text-decoration: underline;
-}
-#navi :focus {
-  background: #a8e0f5;
-  
-}
-#navi :hover {
-  border-bottom: 1px solid;
-  background: #ffa9f9;
-}
-#navi :active {
-  background: #e053d7;
-  color: black;
-  text-decoration: underline;
-  
-}
-
-
-.fond {
-  background-image: url(/src/assets/fond.png);
-  width: 100%;
-  height: 100%;
-}
-
-.nav {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-
-#present {
-  font-size: 3em;
-  background-image: url(/src/assets/fond-degrade.png);
-  width: 100vw;
-}
-
-
-
-.handjet {
+  .handjet {
+    color: blue;
   font-family: "Handjet", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-variation-settings:
@@ -185,65 +157,49 @@ a {
     "ELSH" 2;
   
 }
+ .hautcvv {
+  height: 400px;
+  width: 400px;
+  cursor: pointer;
+ }
+ .hautcvv:hover{
+  box-shadow: 10px 10px 10px rgba(100, 97, 97, 0.2);
+ }
+
+ .photocv {
+  height: 300px;
+  width: 300px;
+ }
+
+ .photocdc {
+  height: 300px;
+  cursor: pointer;
+ }
+
+.photocdc:hover {
+  box-shadow: 10px 10px 10px rgba(100, 97, 97, 0.2);
+}
 
 
+ .photosock {
+  height: 250px;
+  width: 300px;
+ }
 
-
-
-
-#cocoweb {
-  position: fixed;
-  width:200px ;
-  height: 200px;
+ .commentaire {
+  height:300px ;
+  cursor: pointer;
+ }
+ .commentaire:hover {
+  box-shadow: 10px 10px 10px rgba(100, 97, 97, 0.2);
+ }
  
-}
-
-#souris {
-  width: 150px;
-}
-
-.uniquifier {
-  font-family: "Playwrite CU";
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-}
 
 
-
-
-#cocoweb {
-  width:150px ;
-  height: 150px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.roseclair {
-  background-color: #ffa9f9;
-}
-
-small {
-  margin-left: 50%;
-}
-
-#pied img {
-  width: 50px;
-  height: 50px;
-  margin-left: 25%;
-}
-
+ .escom {
+  height: 300px;
+  width: 450px;
+ }
 </style>
 
 

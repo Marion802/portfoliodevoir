@@ -1,39 +1,26 @@
 <template>
-
-      <div id="modale">
+    <div id="Comment">
 
           
 
-          <div class="modal">
-          <div class="overlay" @click="$emit('close')"></div>
-          <div class="modal-container">
-          <button class="close-button" @click="$emit('close')">X</button>
-          <slot></slot>
-          <a href=""><img src="" alt=""></a>
-
-           
-          </div>
-          </div>
+        <div class="modal">
+        <div class="overlay" @click="$emit('close')"></div>
+        <div class="modal-container">
+        <button class="close-button" @click="$emit('close')">X</button>
+        <slot></slot>
+        <a href=""><img src="" alt=""></a>
+        </div>
+        </div>
     </div>
 
 
 </template>
 
-
-
-
 <script setup>
-name: "Modale"
-
-
-
+name : "Comment"
 </script>
 
-
-
-
 <style scoped>
-
 .modal {
   position: fixed;
   top: 0;
